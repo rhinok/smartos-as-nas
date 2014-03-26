@@ -1,0 +1,23 @@
+{
+  "brand": "joyent",
+  "image_uuid": "ff86eb8a-a069-11e3-ae0e-4f3c8983a91c",
+  "alias": "kayaaq",
+  "hostname": "kayaaq",
+  "max_physical_memory": 1024,
+  "quota": 10,
+  "nics": [
+  {
+    "nic_tag": "admin",
+    "ip": "192.168.1.230",
+    "netmask": "255.255.255.0",
+    "gateway": "192.168.1.1"
+  }
+  ],
+  "filesystems": [
+  {
+    "type": "lofs",
+    "source": "/mnt/tank1/media",
+    "target": "/mnt/tank1/media"
+  }
+  ]
+}

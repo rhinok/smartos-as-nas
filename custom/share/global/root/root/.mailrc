@@ -1,0 +1,3 @@
+set sendmail="/opt/local/bin/msmtp"
+set message-sendmail-extra-arguments="-a gmail"
+
