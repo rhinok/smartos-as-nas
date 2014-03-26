@@ -5,7 +5,7 @@ Configuration scripts for SmartOS.
 
 Basic setup
 
-1. Setup public key authentication creating the authorized_keys file in the /usbkey/config.inc directory and adding the root_authorized_keys_file parameter at the end of the /usbkey/config file.
+1. Setup public key authentication creating the authorized_keys file in the /usbkey/config.inc directory and adding the root_authorized_keys_file parameter at the end of the /usbkey/config file:
 
     mkdir /usbkey/config.inc
     cat id_rsa.pub > /usbkey/config.inc/authorized_keys
