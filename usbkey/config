@@ -1,0 +1,21 @@
+#
+# This file was auto-generated and must be source-able by bash.
+#
+
+# admin_nic is the nic admin_ip will be connected to for headnode zones.
+admin_nic=68:5:ca:12:e:c5
+admin_ip=192.168.1.220
+admin_netmask=255.255.255.0
+admin_network=...
+admin_gateway=192.168.1.220
+
+headnode_default_gateway=192.168.1.1
+
+dns_resolvers=192.168.1.1,192.168.1.1
+dns_domain=local
+
+ntp_hosts=pool.ntp.org
+compute_node_ntp_hosts=192.168.1.220
+
+hostname=stormstone
+root_authorized_keys_file=authorized_keys
