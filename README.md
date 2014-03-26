@@ -1,4 +1,4 @@
 smartos-as-nas
 ==============
 
-SmarOS as NAS
+SmartOS as NAS
