@@ -2,6 +2,7 @@
 
 vm_alias=kayaaq
 uuid=`/usr/sbin/vmadm list | grep ${vm_alias} | awk '{ print $1 }'`
+state=`/usr/sbin/vmadm list | grep ${vm_alias} | awk '{ print $4 }'`
 
 case "$1" in
         start)
@@ -11,7 +12,7 @@ case "$1" in
                 /usr/sbin/vmadm stop ${uuid}
                 ;;
         status)
-                echo "${vm_alias} is `/usr/sbin/vmadm list | grep ${vm_alias} | awk '{ print $4 }'`"
+                echo "${vm_alias} is ${state}"
                 ;;
         login)
                 /usr/sbin/zlogin ${uuid}
@@ -23,3 +24,4 @@ case "$1" in
                 exit 64
                 ;;
 esac
+
