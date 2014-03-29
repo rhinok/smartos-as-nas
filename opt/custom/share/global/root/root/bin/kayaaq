@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+vm_alias=kayaaq
+uuid=`/usr/sbin/vmadm list | grep ${vm_alias} | awk '{ print $1 }'`
+
+case "$1" in
+        start)
+                /usr/sbin/vmadm start ${uuid}
+                ;;
+        stop)
+                /usr/sbin/vmadm stop ${uuid}
+                ;;
+        status)
+                echo "kayaaq is `/usr/sbin/vmadm list | grep ${vm_alias} | awk '{ print $4 }'`"
+                ;;
+        login)
+                /usr/sbin/zlogin ${uuid}
+                ;;
+        \*)
+                echo ""
+                echo "Usage: `basename $0` { start | stop | status | login }"
+                echo ""
+                exit 64
+                ;;
+esac
