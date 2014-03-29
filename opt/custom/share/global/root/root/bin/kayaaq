@@ -11,7 +11,7 @@ case "$1" in
                 /usr/sbin/vmadm stop ${uuid}
                 ;;
         status)
-                echo "kayaaq is `/usr/sbin/vmadm list | grep ${vm_alias} | awk '{ print $4 }'`"
+                echo "${vm_alias} is `/usr/sbin/vmadm list | grep ${vm_alias} | awk '{ print $4 }'`"
                 ;;
         login)
                 /usr/sbin/zlogin ${uuid}
