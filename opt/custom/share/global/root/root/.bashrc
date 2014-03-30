@@ -51,3 +51,5 @@ svclog() {
 svclogf() {
   /usr/bin/tail -f `svcs -L $1`
 }
+
+source /etc/TIMEZONE
