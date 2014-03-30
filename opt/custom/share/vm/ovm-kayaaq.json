@@ -5,6 +5,7 @@
   "hostname": "kayaaq",
   "max_physical_memory": 1024,
   "quota": 10,
+  "autoboot": false,
   "nics": [
   {
     "nic_tag": "admin",
