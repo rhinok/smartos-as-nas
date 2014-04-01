@@ -43,4 +43,4 @@ The structure of the /opt/custom folder:
 
 Crontab
 
-Because my UPS doesn't work seemlessly with SmartOS, I had to find I way to keep the service running. For this, I have a cronjob checking every two minutes if the services are alive. If not, it restarts them. An ugly solution, but for now it seems to do what it is meant to do.
+Because my UPS doesn't work seemlessly with SmartOS, I had to find I way to keep NUT running. For this, I have a cronjob checking every two minutes if the services are alive and if not, it restarts them. An ugly solution, but for now it seems to do what it is meant to do.
