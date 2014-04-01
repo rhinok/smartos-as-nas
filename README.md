@@ -11,9 +11,9 @@ Basic setup
     cat id_rsa.pub > /usbkey/config.inc/authorized_keys
     echo "root_authorized_keys_file=authorized_keys" >> /usbkey/config
 
-Optionally, after verifying that passwordless login works, modify /usbkey/ssh/sshd_config file changing PasswordAuthentication to "no".
+After verifying that passwordless login works, modify /usbkey/ssh/sshd_config file changing PasswordAuthentication to "no".
 
-2. Modify the host name by adding the hostname parameter at the end of /usbkey/config file:
+2. Modify the hostname with:
 
     echo "hostname=stormstone" >> /usbkey/config
 
@@ -30,13 +30,17 @@ The structure of the /opt/custom folder:
                 cron - the scripts run by crontab
                 etc  - persistence for specified files from /etc
         svc          - scripts run by SMF manifest files (.sh)
-        vm           - simple definition files for zones and KVM
+        vm           - simple definition files for KVM and zone VMs
     smf              - SMF manifest files (.xml)
 
 1. Postboot configuration (stormstone.[xml|sh]) - the script restores the files in the root folder and runs all the scripts it can find in "script" and "crontab" directories under share/global.
 
-2. Persist configuration files (persist-syscfg.[xml|sh]) - keeps /etc/passwd and /etc/group files up-to-date. To add a new user and group, you need to run svcadm disable svc:/site/persist-syscfg, made your changes in the files from share/global/system/etc, then run svcadm enable svc:/site/persist-syscfg.
+2. Persist configuration files (persist-syscfg.[xml|sh]) - keeps /etc/passwd and /etc/group files up-to-date. To add a new user and group, you need to run svcadm disable svc:/site/persist-syscfg, make your changes in group and passwd files, then run svcadm enable svc:/site/persist-syscfg.
 
 3. Load UPS driver (ups-driver.[xml|sh]) - loads the UPS driver for Mustek PowerMust 636 in memory.
 
 4. Start NUT services (ups-nut.[xml|sh]) - enable NUT services.
+
+Crontab
+
+Because my UPS doesn't work seemlessly with SmartOS, I had to find I way to keep the service running. For this, I have a cronjob checking every two minutes if the services are alive. If not, it restarts them. An ugly solution, but for now it seems to do what it is meant to do.
