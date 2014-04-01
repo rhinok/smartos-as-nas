@@ -37,7 +37,7 @@ The structure of the /opt/custom folder:
 
 2. Persist configuration files (persist-syscfg.[xml|sh]) - keeps /etc/passwd and /etc/group files up-to-date. To add a new user and group, you need to run svcadm disable svc:/site/persist-syscfg, make your changes in group and passwd files, then run svcadm enable svc:/site/persist-syscfg.
 
-3. Load UPS driver (ups-driver.[xml|sh]) - loads the UPS driver for Mustek PowerMust 636 in memory.
+3. Load UPS driver (ups-driver.[xml|sh]) - loads the UPS driver for Mustek PowerMust 636.
 
 4. Start NUT services (ups-nut.[xml|sh]) - enable NUT services.
 
