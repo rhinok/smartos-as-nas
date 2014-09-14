@@ -17,8 +17,8 @@
   "filesystems": [
   {
     "type": "lofs",
-    "source": "/mnt/tank1/media",
-    "target": "/mnt/tank1/media"
+    "source": "/mnt/tank0/media",
+    "target": "/mnt/tank0/media"
   }
   ]
 }

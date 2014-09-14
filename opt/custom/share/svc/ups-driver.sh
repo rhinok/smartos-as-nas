@@ -7,8 +7,8 @@ load_sdc_sysinfo
 load_sdc_config
 
 rem_drv ugen
-add_drv -i '"usb665,5161.2"' -m '* 0666 root sys' ugen
-#update_drv -a -m '* 0666 root sys' -i '"usb665,5161.2"' ugen
+add_drv -i '"usb665,5161.2"' -m '* 0666 nut root' ugen
+update_drv -a -m '* 0666 nut root' -i '"usb665,5161.2"' ugen
 
 exit $SMF_EXIT_OK
 
